@@ -1,0 +1,384 @@
+/* Importación de fuentes de Google */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@400;600;700&display=swap');
+
+/* Variables CSS para colores y valores comunes */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --text-color: #2c3e50;
+    --light-bg: #ecf0f1;
+    --white: #ffffff;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-strong: 0 8px 15px rgba(0, 0, 0, 0.2);
+    --transition: all 0.3s ease;
+    --gradient-primary: linear-gradient(135deg, #2c3e50, #3498db);
+    --gradient-accent: linear-gradient(135deg, #e74c3c, #f39c12);
+}
+
+/* Estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: var(--light-bg);
+    color: var(--text-color);
+    background-image: 
+        radial-gradient(circle at 100% 100%, rgba(52, 152, 219, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 0% 0%, rgba(231, 76, 60, 0.1) 0%, transparent 50%);
+    background-attachment: fixed;
+}
+
+/* Encabezado mejorado */
+header {
+    background: var(--gradient-primary);
+    color: var(--white);
+    padding: 3rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: var(--shadow-strong);
+    position: relative;
+    overflow: hidden;
+    min-height: 200px;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        linear-gradient(45deg, rgba(255,255,255,0.1) 25%, transparent 25%),
+        linear-gradient(-45deg, rgba(255,255,255,0.1) 25%, transparent 25%);
+    background-size: 60px 60px;
+    opacity: 0.1;
+    animation: headerPattern 20s linear infinite;
+}
+
+@keyframes headerPattern {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 60px 60px;
+    }
+}
+
+header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+header .header-icon {
+    margin-right: 2rem;
+    height: 80px;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+    transition: var(--transition);
+    animation: floatIcon 3s ease-in-out infinite;
+}
+
+@keyframes floatIcon {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+header .header-icon:hover {
+    transform: scale(1.15) rotate(5deg);
+    filter: drop-shadow(0 6px 12px rgba(0,0,0,0.4));
+}
+
+header h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--white);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    margin: 0;
+    position: relative;
+    animation: glowText 2s ease-in-out infinite alternate;
+}
+
+@keyframes glowText {
+    from {
+        text-shadow: 0 0 5px rgba(255,255,255,0.5),
+                     0 0 10px rgba(255,255,255,0.3),
+                     0 0 15px rgba(255,255,255,0.2);
+    }
+    to {
+        text-shadow: 0 0 10px rgba(255,255,255,0.8),
+                     0 0 20px rgba(255,255,255,0.5),
+                     0 0 30px rgba(255,255,255,0.3);
+    }
+}
+
+/* Contenido principal mejorado */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: var(--white);
+    box-shadow: var(--shadow-strong);
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: var(--gradient-accent);
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: var(--secondary-color);
+}
+
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.content-section {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    margin: 2.5rem 0;
+    padding: 2rem;
+    background-color: var(--light-bg);
+    border-radius: 15px;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.content-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+    transform: translateX(-100%);
+    transition: 0.5s;
+}
+
+.content-section:hover::before {
+    transform: translateX(100%);
+}
+
+.content-section:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-strong);
+}
+
+.content-section p {
+    flex: 1;
+    min-width: 300px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    position: relative;
+    z-index: 1;
+}
+
+.content-section .decorative-image {
+    max-width: 300px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: var(--shadow-strong);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.content-section .decorative-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(52, 152, 219, 0.2), rgba(231, 76, 60, 0.2));
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.content-section .decorative-image:hover {
+    transform: scale(1.05) rotate(2deg);
+}
+
+.content-section .decorative-image:hover::before {
+    opacity: 1;
+}
+
+/* Enlaces mejorados */
+a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    position: relative;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--secondary-color);
+    transform: scaleX(0);
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+a:hover::after {
+    transform: scaleX(1);
+    background-color: var(--accent-color);
+}
+
+/* Botón mejorado */
+.read-more-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, var(--secondary-color), #2980b9);
+    color: var(--white);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+    margin: 2rem auto;
+    display: block;
+}
+
+.read-more-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    background: linear-gradient(135deg, #2980b9, var(--secondary-color));
+}
+
+/* Pie de página mejorado */
+footer {
+    background: linear-gradient(135deg, var(--primary-color), #34495e);
+    color: var(--white);
+    padding: 2rem;
+    text-align: center;
+    margin-top: 3rem;
+    position: relative;
+}
+
+footer p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Media Queries mejorados */
+@media (max-width: 768px) {
+    header {
+        padding: 2rem 1rem;
+        min-height: 150px;
+    }
+
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    header .header-icon {
+        height: 60px;
+        margin-right: 1rem;
+    }
+
+    .content-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem;
+    }
+
+    .content-section .decorative-image {
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 1.5rem 1rem;
+        min-height: 120px;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    header .header-icon {
+        height: 50px;
+    }
+
+    .content-section {
+        padding: 1rem;
+    }
+
+    .content-section .decorative-image {
+        max-width: 200px;
+    }
+
+    footer {
+        padding: 1.5rem;
+    }
+
+    footer p {
+        font-size: 0.9rem;
+    }
+} 
