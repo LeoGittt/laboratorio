@@ -1,29 +1,60 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Laboratorio de Química</title>
-    <link rel="stylesheet" href="css/estilos.css">
-</head>
-<body>
-    <header>
-        <img src="image/labs-128.png" alt="Laboratorio Icono" class="header-icon">
-        <h1>Laboratorio de Química</h1>
+    <link rel="stylesheet" href="css/estilos.css" />
+  </head>
+  <body>
+    <header class="header-quimica">
+      <div class="header-quimica__contenido">
+        <img
+          src="image/labs-128.png"
+          alt="Flask Icon"
+          class="header-quimica__icono"
+        />
+        <h1 class="header-quimica__titulo">Laboratorio de Química</h1>
+      </div>
     </header>
 
-    <main>
+    <main class="container">
+      <section class="module-section">
         <h2>Módulo 1</h2>
         <h3>Conceptos</h3>
-        <section class="content-section">
-            <p>La química inorgánica es la rama de la química que se encarga del estudio de la formación, composición, estructura y reacciones químicas de los elementos y compuestos que no poseen enlaces carbono-hidrógeno, es decir, que no son compuestos orgánicos. Esta disciplina abarca una vasta gama de sustancias, incluyendo metales, minerales, sales, y gases, fundamentales en procesos industriales, biológicos y geológicos. Es crucial para entender fenómenos como la corrosión, la catálisis y la electroquímica. La palabra <a href="inorganicos.html">inorgánicos</a> se refiere a estos compuestos y sus propiedades.</p>
-            <img src="image/imagen_atomos.png" alt="Átomos y Moléculas" class="decorative-image">
-        </section>
-        <button onclick="location.href='inorganicos.html'" class="read-more-button">Lea el texto a continuación</button>
-    </main>
 
-    <footer>
-        <p>Taller de producción de recursos didácticos multimediales</p>
+        <p>
+          La química inorgánica es la rama de la química que estudia las propiedades, estructura y
+          <img
+            src="image/imagen_atomos.png"
+            alt="Molecular Structure"
+            class="molecular-structure-inline"
+          /> <br>
+          reactividad de los compuestos inorgánicos. Este campo de la química abarca todos los compuestos químicos descontando los que tienen enlaces carbono-hidrógeno, que son objeto de estudio por parte de la química orgánica. Ambas disciplinas comparten numerosos puntos en común, y están surgiendo campos interdisciplinares de gran importancia. La parte más importante de los compuestos inorgánicos se forman por combinación de cationes y aniones unidos por enlaces iónicos. La facilidad con la que se forma un compuesto iónico depende del potencial de ionización (para el catión) y de la afinidad electrónica (para el anión) de los elementos que generan los iones. Los compuestos inorgánicos más importantes son los óxidos, carbonatos, sulfatos, entre otros.
+        </p>
+
+        <div class="image-text-container">
+          <p>
+            La mayor parte de los compuestos
+            <a href="/tp_apellido_nombre/inorganicos.html" class="highlight"
+              >inorgánicos</a
+            >
+            se caracterizan por puntos de fusión elevados, baja conductividad en
+            estado sólido y una importante solubilidad en medio acuoso. A nivel
+            industrial, la química inorgánica, tiene una gran importancia. Se
+            acostumbra a medir el desarrollo de una nación por su productividad
+            en ácido sulfúrico. Entre los productos químicos más fabricados a
+            nivel mundial cabe citar el sulfato amónico, amoniaco, nitrato
+            amónico, sulfato amónico, ácido hipocloroso, peróxido de hidrógeno,
+            ácido nítrico, nitrógeno, oxígeno, carbonato de sodio.
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer-content">
+        <p>Taller de prroduccion de recursos didacticos multimediales</p>
+      </div>
     </footer>
-</body>
-</html> 
+  </body>
+</html>
